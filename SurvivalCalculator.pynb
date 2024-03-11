@@ -1,0 +1,30 @@
+def calculate_duration(age, time_unit):
+    if time_unit.lower() == 'months' or time_unit.lower() == 'm':
+        duration = age * 12
+        unit_name = 'Months'
+    elif time_unit.lower() == 'weeks' or time_unit.lower() == 'w':
+        duration = age * 52
+        unit_name = 'Weeks'
+    elif time_unit.lower() == 'days' or time_unit.lower() == 'd':
+        duration = age * 365
+        unit_name = 'Days'
+    elif time_unit.lower() == 'hours' or time_unit.lower() == 'h':
+        duration = age * 365 * 24
+        unit_name = 'Hours'
+    elif time_unit.lower() == 'minutes' or time_unit.lower() == 'min':
+        duration = age * 365 * 24 * 60
+        unit_name = 'Minutes'
+    elif time_unit.lower() == 'seconds' or time_unit.lower() == 's':
+        duration = age * 365 * 24 * 60 * 60
+        unit_name = 'Seconds'
+    else:
+        return "Invalid time unit selected. Please choose from: Months, Weeks, Days, Hours, Minutes, Seconds."
+
+    return f"You lived for {duration} {unit_name}"
+
+# Example usage
+age = int(input("What's your age? "))
+time_unit = input("Please choose time unit: Months, Weeks, Days, Hours, Minutes, Seconds. ").strip()
+
+result = calculate_duration(age, time_unit)
+print(result)
